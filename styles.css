@@ -1,27 +1,91 @@
+
+
+/* Body and Layout */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    margin-top: 20vh;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: left; /* Explicitly set left alignment for the entire document */
+}
+
+/* Header */
+header {
+  background-color: #336699;
+  color: white;
+  padding: 20px;
+  text-align: left; /* Header text remains center-aligned */
+}
+
+header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Main Container */
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto; /* Centers the container, not the content */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Ensure content inside the main container is left-aligned */
+}
+
+/* Search Section */
+.search-section {
+  margin-bottom: 20px;
+  text-align: left; /* Ensure search section content is left-aligned */
+}
+
+.search-section label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: flex-start; /* Fix: Properly align items to the top */
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #d9534f;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  text-align: center; /* Button text remains center-aligned */
+}
+
+.search-bar button:hover {
+  background-color: #c9302c;
+}
+
+/* Result Section */
+.result-section {
+  text-align: left; /* Ensure results are left-aligned */
+}
+
+.result-section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #336699;
+}
+
+#result {
+  padding: 10px;
+  font-size: 16px;
+  border-top: 1px solid #ccc;
+}
