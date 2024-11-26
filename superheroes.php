@@ -1,5 +1,4 @@
 <?php
-
 $superheroes = [
   [
       "id" => 1,
@@ -63,10 +62,13 @@ $superheroes = [
   ], 
 ];
 
-?>
+$html = "<ul>\n";
+foreach ($superheroes as $superhero) {
+    $html .= "<li>" . htmlspecialchars($superhero['alias']) . "</li>\n";
+}
+$html .= "</ul>\n";
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+// Set the response header to return HTML content
+header('Content-Type: text/html; charset=UTF-8');
+echo $html;
+?>

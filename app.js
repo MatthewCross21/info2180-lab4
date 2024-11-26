@@ -1,26 +1,16 @@
-// Select the Search button
-const searchBtn = document.getElementById("search-btn");
-
-// Add click event listener
-searchBtn.addEventListener("click", () => {
-  // Fetch data from the superheroes.php endpoint
-  fetch("superheroes.php")
+document.getElementById("search-btn").addEventListener("click", function () {
+  fetch('superheroes.php')
     .then(response => {
       if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      return response.json(); // Assuming the PHP script returns JSON
+      return response.text(); // Parse the response as plain text (HTML)
     })
-    .then(data => {
-      // Display the list of superheroes in an alert
-      if (Array.isArray(data)) {
-        alert("Superheroes:\n" + data.join("\n"));
-      } else {
-        alert("Unexpected response format");
-      }
+    .then(html => {
+      alert(html); // Display the HTML as an alert
     })
     .catch(error => {
-      console.error("There was a problem with the fetch operation:", error);
-      alert("Failed to fetch superheroes.");
+      console.error('Error fetching superhero data:', error); // Log the error for debugging
+      alert(`Failed to fetch superhero data: ${error.message}`);
     });
 });
